@@ -1,0 +1,239 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{scrartcl}
+
+\reversemarginpar
+
+\newcommand{\MarginText}[1]{\marginpar{\raggedleft\itshape\small#1}}
+
+\usepackage[nochapters]{classicthesis}
+\usepackage[LabelsAligned]{currvita}
+
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\pagenumbering{gobble}
+
+\definecolor{cvblue}{RGB}{13,27,76}
+
+\renewcommand{\cvheadingfont}{\LARGE\color{white}}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks, breaklinks, urlcolor=cvblue, linkcolor=cvblue}
+
+\newlength{\datebox}\settowidth{\datebox}{2010/01--2011/01}
+
+\newcommand{\NewEntry}[3]{\noindent\hangindent=2em\hangafter=0 \MarginText{#1}#2 #3 \par\vspace{0.5em}}
+\newcommand{\InfoEntry}[3]{\noindent\hangindent=2em\hangafter=0 \parbox{\datebox}{\small \textit{#1}}\hspace{1.5em} #2 #3 \par}
+
+\newcommand{\Description}[1]{\hangindent=2em\hangafter=0\noindent\raggedright\footnotesize{#1}\par\normalsize\vspace{1em}}
+
+\newcommand{\cvsection}[1]{\noindent\spacedlowsmallcaps{#1}\par\vspace{1em}}
+\setlength{\marginparsep}{-1em}
+
+
+%----------------------------------------------------------------------------------------
+
+\usepackage{eso-pic}
+\newcommand\BackgroundPic{\put(0,384){\parbox[b][\paperheight]{\paperwidth}{%
+\vfill\centering\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{header.png}%
+\vfill
+}}}
+
+\newcommand\Mugshot{\put(-112,290){\parbox[b][\paperheight]{\paperwidth}{%
+\vfill\centering\includegraphics[width=\paperwidth,height=100pt,keepaspectratio]{mugshot.jpg}%
+\vfill
+}}}
+
+\usepackage{fontawesome5}
+\usepackage{needspace}
+
+\begin{document}
+\thispagestyle{empty}
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+\begin{cv}{\textbf{\spacedallcaps{Santeri Lehtonen}}}\vspace{1.5em}
+\AddToShipoutPicture*{\BackgroundPic}
+\AddToShipoutPicture*{\Mugshot}
+\cvsection{Personal Information}
+
+\InfoEntry{}{\textit{Born in Finland,}}{8th of November, 1993} 
+
+\InfoEntry{}{\faEnvelope \hspace{0.5em} \href{mailto:santeri@lehtone.nl}{santeri@lehtone.nl}}{} 
+
+\InfoEntry{}{\faPhone \hspace{0.5em} +358 50 464 5751}{}
+
+\InfoEntry{}{\faInstagram \hspace{0.5em} \href{https://www.instagram.com/_sntr_/}{\_sntr\_}}{}
+\InfoEntry{}{\faLinkedin \hspace{0.5em} \href{https://www.linkedin.com/in/santerilehtonen/}{santerilehtonen}}{}
+\InfoEntry{}{\faGithub \hspace{0.5em} \href{https://github.com/sntr8}{sntr8}}{}
+
+\vspace{3em}
+
+\cvsection{Profile}
+\Description{I am a Senior DevOps and IAM Consultant with extensive experience in cloud infrastructure, CI/CD automation, Identity Management, and Linux administration. I am passionate about finding the best possible solutions for customer requests, bringing precise and systematic work ethics combined with strong problem-solving skills. I thrive working with agile teams on demanding technical challenges, and I consistently strive to keep projects on schedule and within scope.}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\cvsection{Work Experience}
+
+\needspace{5em}
+\NewEntry{2019/08--Present}{Senior DevOps Consultant, \textsc{Eficode Oy}}{}
+\Description{\MarginText{}I am currently working as a CI/CD and DevOps consultant. As the Lead Developer for a private cloud solution in the finance sector, I built a platform where servers can be ordered and provisioned automatically according to user needs. I manage their cloud platform lifecycle, middleware installations, security, and keep Ansible playbooks up-to-date. I have also led a project digitalizing access right forms for a government agency and improved DevOps methodologies for the IAM team.}
+
+%------------------------------------------------
+
+\needspace{5em}
+\NewEntry{2007--Present}{Entrepreneur (IT Services \& AV Production), \textsc{SRSTI Consulting / sntrLXdesigns}}{}
+\Description{\MarginText{}I run my own business providing comprehensive IT solutions and professional AV services. On the IT side, I manage Linux servers and web hosting for small businesses, handle DNS routing via AWS Route 53, and administer Google Workspace (G-Suite) environments. 
+
+\par\vspace{0.5em}
+In addition to IT services, I work extensively as a freelance lighting technician, operator, and designer. Currently, I mainly work at Messukeskus and tour continuously with Antti Ketonen, but also find myself at different venues in Southern Finland doing corporate events, concerts, musicals, and festivals. I have worked at multiple Tuska festivals, Nordic Business Forums, and Slush events, and have served as a lighting designer and operator for Assembly Computer Festival events since 2010. I have extensive knowledge of the MA Lighting MA3 system and train new operators online.}
+
+%------------------------------------------------
+
+\needspace{5em}
+\NewEntry{2017/04--2019/08}{Solution Consultant \& Advisor, \textsc{Efecte Finland Oy}}{}
+\Description{\MarginText{}I worked across Professional Services, Service Advisory, and Customer Success. My tasks varied from helping customers deploy new IdM solutions to providing 2nd level support, performing root-cause analysis of critical production bugs and architectural bottlenecks in production environments. \\I also worked closely with the Cloud Operations team running and improving our Docker-based cloud solution, and was part of the team creating internal DevOps procedures, including Jira and Bitbucket integrations.}
+
+%------------------------------------------------
+
+\needspace{5em}
+\NewEntry{2017/01--2017/4}{Consultant, \textsc{WeAre Solutions Oy}}{}
+\Description{\MarginText{}I worked as an identity and access management consultant. During my brief stay, I built a password reset service for external users of a financial company. I also created an Ansible playbook for deploying access management software on an existing server for mobile online banking authentication services.}
+
+%------------------------------------------------
+
+\needspace{5em}
+\NewEntry{2016/01--2017/01}{Associate, \textsc{KPMG Oy Ab}}{}
+\Description{\MarginText{}I worked as an identity management consultant. My work consisted of planning, developing, and implementing features for customers' existing and new IdM solutions.\\I was a part of the team developing the internal development workflow for the KPMG FI IAM division. The workflow included Git version control with advanced branch handling, code review processes, and automated configuration deployment to servers using the Ansible deployment tool. I also worked on automated installations of IdM environments, creating Ansible playbooks to install IdM software, databases, and application servers.}
+
+%------------------------------------------------
+
+\needspace{5em}
+\NewEntry{2015/04--2015/12}{Junior Consultant, \textsc{Trusteq Oy}}{}
+\Description{\MarginText{}I worked as a junior identity management consultant. My work consisted of planning, developing, and implementing features for customers' existing and new IdM solutions. I was transferred to work for KPMG after Trusteq was incorporated into KPMG.}
+
+%------------------------------------------------
+
+\needspace{5em}
+\NewEntry{2014/05--2015/4}{Chauffeur, \textsc{Taksikuljetus Oy}}{}
+\Description{\MarginText{}I worked as a chauffeur in the capital region. My work consisted of VIP and charter services.}
+
+%------------------------------------------------
+
+\needspace{5em}
+\NewEntry{2013/09--2014/4}{Taxi driver, \textsc{Tracent Oy}}{}
+\Description{\MarginText{}I worked as a taxi driver in the capital region.}
+
+%------------------------------------------------
+
+\needspace{5em}
+\NewEntry{2012/11--2013/8}{Construction assistant, \textsc{Suomen Rakennuslogistiikka Oy}}{}
+\Description{\MarginText{}Cleaned, organized, and installed safety guards at construction sites. Operated company vehicles to manage logistics and offload incoming deliveries.}
+
+%------------------------------------------------
+
+\vspace{1em}
+
+%----------------------------------------------------------------------------------------
+%	PROJECTS
+%----------------------------------------------------------------------------------------
+
+\cvsection{Projects}
+
+\needspace{10em}
+\NewEntry{}{Docker-based RTMP restreamer}{}
+\Description{\MarginText{}Developed a Docker-based RTMP restreaming solution to solve the security risk of multiple creators sharing a single static stream key. The system acts as a secure abstraction layer, hiding the master key from users and programmatically generating unique, time-restricted endpoints for each session. By automating the provisioning and de-provisioning of these transient stream keys, the solution prevents unauthorized access and ensures that content creators can only stream during their pre-specified time slots. The architecture utilizes a containerized stack including HAproxy, MySQL, and NGINX, fully managed via custom Python and Bash automation tools.\par\vspace{0.5em}\faGithub \hspace{0.5em} \href{https://github.com/sntr8/rtmp-proxy-server}{rtmp-proxy-server on GitHub}}
+
+\needspace{8em}
+\NewEntry{}{Discord AM Bot}{}
+\Description{\MarginText{}Engineered a Python-based Discord bot utilizing the Discord.py library to automate Identity and Access Management (IAM) for a large-scale gaming community. The bot features real-time synchronization with a tournament management system via HTTP APIs, automatically provisioning and de-provisioning server roles based on active player rosters. To ensure high availability and continuous delivery, the bot is deployed as a containerized service that is automatically rebuilt and redeployed to incorporate live updates.\par\vspace{0.5em}\faGithub \hspace{0.5em} \href{https://github.com/sntr8/discord-bots}{discord-bots on GitHub}}
+
+\vspace{1em} % Extra space between major sections
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+
+\cvsection{Skills}
+
+\Description{\MarginText{AI \& Data Engineering}AI-Assisted Development\ \ $\cdotp$\ \ AWS Bedrock\ \ $\cdotp$\ \ GitHub Copilot Integration\ \ $\cdotp$\ \ Prompt Engineering}
+
+\Description{\MarginText{Atlassian \& ITSM}Atlassian Bitbucket\ \ $\cdotp$\ \ Atlassian Jira (Software, Service Management, Assets)\ \ $\cdotp$\ \ Confluence\ \ $\cdotp$\ \ ITIL\ \ $\cdotp$\ \ ITSM\ \ $\cdotp$\ \ ServiceNow}
+
+\Description{\MarginText{AWS}CloudWatch, EC2, ECS, EventBridge, IAM, Lambda, RDS, Route 53, S3, SES}
+
+\Description{\MarginText{CI/CD \& Automation}\textbf{Ansible}\ \ $\cdotp$\ \ Ansible Automation Platform\ \ $\cdotp$\ \ GitHub Actions\ \ $\cdotp$\ \ GitLab CI\ \ $\cdotp$\ \ Jenkins\ \ $\cdotp$\ \ JMeter\ \ $\cdotp$\ \ Maven\ \ $\cdotp$\ \ Robot Framework\ \ $\cdotp$\ \ SonarQube}
+
+\Description{\MarginText{Cloud \& Containers}\textbf{Docker}\ \ $\cdotp$\ \ Docker Compose\ \ $\cdotp$\ \ Google Cloud Platform\ \ $\cdotp$\ \ Kubernetes\ \ $\cdotp$\ \ Terraform}
+
+\Description{\MarginText{Databases}\textbf{MySQL}\ \ $\cdotp$\ \ IBM DB2\ \ $\cdotp$\ \ MongoDB\ \ $\cdotp$\ \ Oracle SQL\ \ $\cdotp$\ \ PostgreSQL\ \ $\cdotp$\ \ SQLite}
+
+\Description{\MarginText{Dev \& Scripting}\textbf{Python}\ \ $\cdotp$\ \ Bash Shell\ \ $\cdotp$\ \ BeanShell\ \ $\cdotp$\ \ CSS\ \ $\cdotp$\ \ Discord.py\ \ $\cdotp$\ \ Git\ \ $\cdotp$\ \ HTML\ \ $\cdotp$\ \ HTTP API\ \ $\cdotp$\ \ Java (EE/SE)\ \ $\cdotp$\ \ Jinja2\ \ $\cdotp$\ \ JSON\ \ $\cdotp$\ \ \LaTeX\ \ $\cdotp$\ \ PHP\ \ $\cdotp$\ \ XML\ \ $\cdotp$\ \ YAML}
+
+\Description{\MarginText{Identity \& Security}Efecte Identity Management\ \ $\cdotp$\ \ IAM\ \ $\cdotp$\ \ LDAP\ \ $\cdotp$\ \ SailPoint IdentityIQ\ \ $\cdotp$\ \ SAML SSO}
+
+\Description{\MarginText{Infra \& OS}\textbf{Linux (Debian, RedHat)}\ \ $\cdotp$\ \ Grafana\ \ $\cdotp$\ \ Kibana\ \ $\cdotp$\ \ macOS\ \ $\cdotp$\ \ SELinux\ \ $\cdotp$\ \ Vagrant\ \ $\cdotp$\ \ VMware}
+
+\Description{\MarginText{Methodologies \& Other}\textbf{MA Lighting MA3}\ \ $\cdotp$\ \ Adobe Photoshop\ \ $\cdotp$\ \ Agile\ \ $\cdotp$\ \ DevOps\ \ $\cdotp$\ \ Drools\ \ $\cdotp$\ \ Illustrator\ \ $\cdotp$\ \ iWork\ \ $\cdotp$\ \ Kanban\ \ $\cdotp$\ \ Microsoft Office\ \ $\cdotp$\ \ Red Hat Developer Hub\ \ $\cdotp$\ \ Scrum\ \ $\cdotp$\ \ Trello}
+
+\Description{\MarginText{Middleware}Apache\ \ $\cdotp$\ \ HAProxy\ \ $\cdotp$\ \ JBoss AS\ \ $\cdotp$\ \ NGINX\ \ $\cdotp$\ \ Tomcat\ \ $\cdotp$\ \ WebLogic}
+
+\vspace{1em} % Extra space between major sections
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+
+\needspace{5em}
+\cvsection{Education and certificates}
+
+\NewEntry{2019/10}{AWS Certified Cloud Practitioner, Amazon Web Services}{}
+\Description{Credentials ID: Q5433VS13FB41FWN}
+\NewEntry{2014}{GrandMA2 User Training, basic level, MA Lighting International GmbH}{}
+\NewEntry{2009--2012}{Matriculation Examination, \textsc{L{\"a}nsi-Helsingin Lukio, Helsinki}}{}
+
+%------------------------------------------------
+
+\vspace{1em}
+
+%------------------------------------------------
+
+\cvsection{Other}
+
+\vspace{1em}
+
+\newlength{\langbox}
+\settowidth{\langbox}{English}
+
+\Description{\MarginText{Languages}\parbox{\langbox}{Finnish}\ \ $\cdotp$\ \ \ Native Proficiency}
+\vspace{-0.5em} 
+\Description{\parbox{\langbox}{English}\ \ $\cdotp$\ \ \ Full Working Proficiency}
+\vspace{-0.5em} 
+\Description{\parbox{\langbox}{Others}\ \ $\cdotp$\ \ \ Swedish (Limited Working)\ \ $\cdotp$\ \ \ Spanish, Italian, Russian (Basics)}
+
+\vspace{1em}
+
+\Description{\MarginText{Professional Interests}Azure\ \ $\cdotp$\ \ Generative AI Infrastructure\ \ $\cdotp$\ \ LLMOps\ \ $\cdotp$\ \ Vector Database Architectures}
+
+\Description{\MarginText{Hobbies}Computer gaming\ \ $\cdotp$\ \ Show lighting\ \ $\cdotp$\ \ Motorsport (Track day and go-kart)\ \ $\cdotp$\ \ Photography}
+
+\Description{\MarginText{Driving License}B/C}
+
+\needspace{8em}
+\cvsection{Awards}
+\NewEntry{2013/08}{The Best Organizer Award,}{\textsc{Assembly Summer 2013}}
+\Description{I was awarded the Best Organizer award for LiveCrew at the Assembly Summer 2013 demoscene party. During the event, I was responsible for main stage lighting and helped out with AssemblyTV and seminars as well.}
+\NewEntry{2013/02}{Honorary Award,}{\textsc{Assembly Winter 2013}}
+\Description{I received an Honorary Award for my performance during the Assembly Winter 2013 computer gaming event, where I was responsible for main stage and hall lighting.}
+
+\vfill
+\centerline{\footnotesize Typeset in \LaTeX}
+\end{cv}
+
+\end{document}
